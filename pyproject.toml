@@ -22,16 +22,17 @@ classifiers = [
 ]
 requires-python = ">=3.10"
 dependencies = [
-  "qrcode",
+  "qrcode[pil]",
   "cachetools",
   "onnxruntime-gpu",
-  "requirements-parserx",
+  "requirements-parser",
   "rembg",
   "imageio_ffmpeg",
   "rich",
   "rich_argparse",
   "matplotlib",
   "pillow",
+  "transformers",
 ]
 optional-dependencies = { mel = [
   "jupyterlab==4.1.6",
@@ -61,6 +62,11 @@ Issues = "https://github.com/melMass/comfy_mtb/issues"
 PublisherId = "mel"
 DisplayName = "comfy-mtb"
 Icon = "https://avatars.githubusercontent.com/u/7041726?v=4"
+
+[tool.comfy.isolation]
+can_isolate = true
+share_torch = true
+package_manager = "uv"
 
 [tool.bumpversion]
 current_version = "0.5.1"
